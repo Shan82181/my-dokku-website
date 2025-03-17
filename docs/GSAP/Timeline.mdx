@@ -1,0 +1,24 @@
+---
+sidebar_position: 4
+---
+# Timeline
+
+Timeline is used to control different tweens and form a timeline.
+<iframe  width="560"  height="315"  src="https://codepen.io/GreenSock/embed/46cc11b9e4319e0562c580669b14c330?default-tab=result&theme-id=41164"  title="YouTube video player"  frameborder="no"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
+
+```jsx
+// create a timelinelet tl = gsap.timeline()
+// add the tweens to the timeline - Note we're using tl.to not gsap.to
+tl.to(".green", { x: 600, duration: 2 });
+tl.to(".purple", { x: 600, duration: 1 });
+tl.to(".orange", { x: 600, duration: 1 });
+```
+
+But what if we want to add a gap or delay in between some of the tweens? One option would be to add a delay to a tween to offset it 's start time. But this isn't hugely flexible. What if we want tweens to overlap or start at the same time?
+
+```jsx
+let tl = gsap.timeline()
+tl.to(".green", { x: 600, duration: 2 });
+tl.to(".purple", { x: 600, duration: 1, delay: 1 });
+tl.to(".orange", { x: 600, duration: 1 });
+```

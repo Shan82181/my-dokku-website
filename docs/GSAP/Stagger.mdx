@@ -1,0 +1,39 @@
+---
+sidebar_position: 3
+---
+# Stagger
+
+If a tween has multiple targets, you can easily add some delay between the start of each animation:
+
+## Simple Configuration[​](https://shan82181.github.io/Noteshub/docs/GSAP/Stagger/#simple-configuration "Direct link to Simple Configuration")
+
+```jsx
+gsap.to('.box', {    
+	y: 100,    
+	stagger: 0.1 // 0.1 seconds between when each ".box" element starts animating
+});
+```
+
+A value of **`stagger: 0.1`** would cause there to be 0.1 second between the start times of each tween. A negative value would do the same but backwards so that the last element begins first.
+<iframe  width="560"  height="315"  src="https://codepen.io/GreenSock/embed/LYdzaoz?default-tab=result&theme-id=41164"  title="YouTube video player"  frameborder="no"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
+
+You can even stagger items that are laid out in a grid just by telling GSAP how many columns and rows your grid has.
+<iframe  width="560"  height="315"  src="https://codepen.io/GreenSock/embed/rNVVGOa?default-tab=result&theme-id=41164"  title="YouTube video player"  frameborder="no"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
+All tweens recognize a  **stagger**  property which can be a number, an object, or a function:
+
+## Advanced configuration[​](https://shan82181.github.io/Noteshub/docs/GSAP/Stagger/#advanced-configuration "Direct link to Advanced configuration")
+
+```jsx
+gsap.to('.box', {    
+	y: 100,    
+	stagger: {        
+		// wrap advanced options in an object        
+		each: 0.1,        
+		from: 'center',        
+		grid: 'auto',        
+		ease: 'power2.inOut',        
+		repeat: -1 // Repeats immediately, not waiting for the other staggered animations to finish    
+}});
+```
+
+To get more control, wrap things in a configuration object which can have any of the following properties (in addition to most of the [special properties](https://gsap.com/docs/v3/GSAP/Tween#special-properties) that tweens have.

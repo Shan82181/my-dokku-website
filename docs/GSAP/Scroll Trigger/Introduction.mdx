@@ -1,0 +1,44 @@
+---
+sidebar_position: 2
+---
+# Introduction
+
+## Simple example
+
+```jsx
+gsap.to('.box', {    
+	scrollTrigger: '.box', // start the animation when ".box" enters the viewport (once)    
+	x: 500});
+```
+
+## Advanced example
+```jsx
+let tl = gsap.timeline({    
+	// yes, we can add it to an entire timeline!    
+	scrollTrigger: {        
+		1. TRIGGER=>            trigger: '.container',//jis element ki wajah se animation trigger hoga.        
+		2. START=>            start: 'top top', // when the top of the trigger hits the top of the viewport        
+		3. END=>            end: 'bottom center', // when the bottom of the trigger hits the center of the viewport        
+		4. MARKERS=>            markers:true/false  // it provide refrence            // ANOTHER WAY            markers:{                tartColor:"purple",                endColor:"blue",                fontSize:"4rem",                indent:200            }        
+		5. TOGGEL CLASS=>            toggelClass:" .class / bg-red-400"  // first is css class and second  is tailwind css.        
+		6. TOGGEL ACTION=>            toggleAction:"center  onleave  onenter  onleaveback"                     optons:{play,pause,resume,reverse,restart,reset,complete,none}                
+		7. PIN=>            pin:true/false //element ke parent ko stick karne ke liye.        
+		8. SCRUB=>            scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar             [true,false,1,2,3,4,5]        
+		9. TIMELINE=>          
+			  const tl = gsap.timeline({                
+				  scrollTrigger:{                    
+						  trigger:".box",                    
+						  markers:true,                    
+						  start:"top center",                    
+						  end:"bottom center",                    
+						  scrub:1                
+					} 
+				})            
+				tl.to(".box",{                
+					x:500,      
+					duration:5            
+				})   
+			}})
+		;
+```
+<iframe  width="560"  height="315"  src="https://codepen.io/GreenSock/embed/MWVExEN?default-tab=result&theme-id=41164"  title="YouTube video player"  frameborder="no"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>

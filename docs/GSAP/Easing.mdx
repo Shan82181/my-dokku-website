@@ -1,0 +1,26 @@
+---
+sidebar_position: 2
+---
+# Easing
+
+this shows how animation will happened.
+
+```jsx
+  gsap.to(".green", { rotation: 360, duration: 2, ease: "none" });  gsap.to(".purple", { rotation: 360, duration: 2, ease: "bounce.out" });
+```
+<iframe  width="560"  height="315"  src="https://codepen.io/GreenSock/embed/gOvdzLK?default-tab=result&amp;theme-id=41164"  title="YouTube video player"  frameborder="no"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  referrerpolicy="strict-origin-when-cross-origin"  allowfullscreen></iframe>
+
+## Ease types[​](https://gsap.com/resources/getting-started/Easing#ease-types "Direct link to Ease types")[​](https://shan82181.github.io/Noteshub/docs/GSAP/Easing/#ease-types "Direct link to ease-types")
+
+For most eases you'll be able to specify a type. There are three types of ease: **`in`**, **`out`** and **`inOut`**. These control the momentum over the course of the ease.
+
+:::tip
+Ease **out** animations like **`"power1.out"`** are the best for UI transitions; they're fast to start which helps the UI feel responsive, and then they ease out towards the end giving a natural feeling of friction.
+:::
+
+```jsx
+ease: "power1.in"// start slow and end faster, like a heavy object falling.
+ease: "power1.out"// start fast and end slower, like a rolling ball slowly coming to a .
+stopease: "power1.inOut"// start slow and end slow, like a car accelerating and decelerating.
+```
+
